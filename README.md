@@ -20,6 +20,11 @@ screen captures of your app
 The planning materials used to build this app.
 * High-level user stories.
 
+As a user I want to choose between a host account or guest account.
+As a user I want to be able to log in to the app.
+I want to be able to peruse photos of places to stay.
+I want to see information about the hosts of the places.
+
 
 ---
 ### Technologies & Code Snippets
@@ -55,6 +60,12 @@ https://www.walkscore.com/professional/travel-time-http-api.php
 https://travelbriefing.org/api 
 https://www.refugerestrooms.org/api/docs/#!/restrooms
 
+I want to to be able to see the weather where I'm going to stay.
+https://rapidapi.com/blog/access-global-weather-data-with-these-weather-apis/
+
+I want to be able to find places to stay where I can see an eclipse.
+https://www.programmableweb.com/api/mooncalc
+
 
 * list of technologies
 * screen captures of your code
@@ -67,3 +78,4 @@ Give credit to any `codepen` that inspired you, `medium` article that helped you
 
 ### Future development
 What are the next steps for the project? How will you continue to evolve it?
+
