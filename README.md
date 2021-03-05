@@ -20,40 +20,42 @@ screen captures of your app
 The planning materials used to build this app.
 * High-level user stories.
 
+
+
+
 As a user I want to choose between a host account or guest account.
 As a user I want to be able to log in to the app.
 I want to be able to peruse photos of places to stay.
 I want to see information about the hosts of the places.
 
-Users have two options for accounts: Host or Guest
-Host: 
-    * As a host I will need to load profile, description and photos of my place and of myself
-    * As a host I will need to set times that I am unavailable/available
-    * I will have reviews from hosts or guests: both will display on the same page
-    * I will want to review the guests as they send a request:
-        * safety information (light background check)
-        * reviews from other hosts
-        * desire to share food/talents/breakfasts
-        * expectations fo the host
-    * I will want a place where I can state directly my expectation of guests as far as
-        * compensation
-        * quiet hours
-        * times to return to the house
-    * I will want to escalate guests behavior to support team
+# Hosts: 
+* As a host I will need to load profile, description and photos of my place and of myself
+* As a host I will need to set times that I am unavailable/available
+* I will have reviews from hosts or guests: both will display on the same page
+* I will want to review the guests as they send a request:
+    * safety information (light background check)
+    * reviews from other hosts 
+    * desire to share food/talents/breakfasts
+    * expectations fo the host
+* I will want a place where I can state directly my expectation of guests as far as
+    * compensation
+    * quiet hours
+    * times to return to the house
+* I will want to escalate guests behavior to support team
 
-Guests: 
-    * I will want to load profile:
-        * description and photo of myself
-        * description of my travel, why I travel, etc.
-        * description of what I have to share (food/talent/breakfast)
-        * light bckground check
-    * I will have reviews from hosts or guests: both will display on the same page
-    * I will want to search host profiles and see:
-        * sleeping space
-        * host expectation
-        * host picture (profile, sleeping space)
-    * I want the opportunity within the app to find interesting restauarants and things to do in the city I'm visiting.
-    * I will want to escalate hosts behavior to support team.
+# Guests: 
+* I will want to load profile:
+    * description and photo of myself
+    * description of my travel, why I travel, etc.
+    * description of what I have to share (food/talent/breakfast)
+    * light bckground check
+* I will have reviews from hosts or guests: both will display on the same page
+* I will want to search host profiles and see:
+    * sleeping space
+    * host expectation
+    * host picture (profile, sleeping space)
+* I want the opportunity within the app to find interesting restauarants and things to do in the city I'm visiting.
+* I will want to escalate hosts behavior to support team.
 
 Stretch goals:
     * User created events
