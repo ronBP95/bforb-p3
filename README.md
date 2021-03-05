@@ -28,7 +28,7 @@ As a user I want to be able to log in to the app.
 I want to be able to peruse photos of places to stay.
 I want to see information about the hosts of the places.
 
-# Hosts: 
+### Hosts: 
 * As a host I will need to load profile, description and photos of my place and of myself
 * As a host I will need to set times that I am unavailable/available
 * I will have reviews from hosts or guests: both will display on the same page
@@ -43,7 +43,7 @@ I want to see information about the hosts of the places.
     * times to return to the house
 * I will want to escalate guests behavior to support team
 
-# Guests: 
+### Guests: 
 * I will want to load profile:
     * description and photo of myself
     * description of my travel, why I travel, etc.
