@@ -23,6 +23,8 @@ As a user I want to be able to log in to the app.
 I want to be able to peruse photos of places to stay.
 I want to see information about the hosts of the places.
 
+![entry point](./assets/bforb.PNG)
+
 ### Hosts: 
 * As a host I will need to load profile, description and photos of my place and of myself
 * As a host I will need to set times that I am unavailable/available
@@ -52,9 +54,16 @@ I want to see information about the hosts of the places.
 * I want the opportunity within the app to find interesting restauarants and things to do in the city I'm visiting.
 * I will want to escalate hosts behavior to support team.
 
+### User: 
+* Sign-In: Default neutral components
+    * Profile pic
+    * about me
+    * Why do you travel?
+    * Are you guest or hosts?
+
 Stretch goals:
-    * User created events
-    * User discussion boards
+* User created events
+* User discussion boards
 
 
 ---
