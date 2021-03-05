@@ -17,11 +17,6 @@ screen captures of your app
 
 ---
 ### User Stories & Wireframes
-The planning materials used to build this app.
-* High-level user stories.
-
-
-
 
 As a user I want to choose between a host account or guest account.
 As a user I want to be able to log in to the app.
