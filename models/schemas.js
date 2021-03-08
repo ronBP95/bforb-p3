@@ -26,7 +26,7 @@ const hostSchema = new Schema({
     location: String,
     numberOfGuests: Number,
     rating: Number,
-    photoOfBed: String,
+    placeOffered: [placesToStaySchema],
     wantsForBreakfast: String,
     comments: [commentsSchema]
 })
@@ -36,4 +36,11 @@ const commentsSchema = new Schema({
     createdAt: Date,
     rating: Number,
     comment: String
+})
+
+const placesToStaySchema = new Schema({
+    location: String,
+    bedPhoto: String,
+    description: String,
+    rating: Number
 })
