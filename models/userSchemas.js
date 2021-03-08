@@ -1,5 +1,7 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
+import guestSchema from './guestSchema'
+import hostSchema from './hostSchema'
 
 const userSchema = new Schema({
     name: String,
@@ -13,29 +15,6 @@ const userSchema = new Schema({
     isHost: Boolean,
     guest: [guestSchema],
     host: [hostSchema]
-})
-
-const guestSchema = new Schema({
-    numberOfStays: Number,
-    rating: Number,
-    wantsToMake: String,
-    comments: [commentsSchema]
-})
-
-const hostSchema = new Schema({
-    location: String,
-    numberOfGuests: Number,
-    rating: Number,
-    placeOffered: [placesToStaySchema],
-    wantsForBreakfast: String,
-    comments: [commentsSchema]
-})
-
-const commentsSchema = new Schema({
-    user: String,
-    createdAt: Date,
-    rating: Number,
-    comment: String
 })
 
 const placesToStaySchema = new Schema({
