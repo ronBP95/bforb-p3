@@ -34,10 +34,10 @@ const CreateProfile = (props) => {
     const handleName = (e) => setName(e.target.value)
 
     const handleSelect = async (value) => {
+        setLocation(value);
         const results = await geocodeByAddress(value);
         const latLng = await getLatLng(results[0])
         console.log(latLng)
-        setLocation(value);
         setCoordinates(latLng);
         console.log(coordinates)
 
@@ -82,10 +82,13 @@ const CreateProfile = (props) => {
                                   return(
                                   <div>
                                         <input {...getInputProps({placeholder: "My location"})} />
-                                            <div >
-                                                {suggestions.map(suggestion => {
-                                                    return <div {...getSuggestionItemProps(suggestion)}>{suggestion.description}</div>
-                                                })}
+                                            <div className="autocomplete-dropdown-container">
+                                                {suggestions.map((suggestion, key) => {
+                                                    const style = {
+                                                        backgroundColor: suggestion.active ? "#a1f7ff" : "#fff"
+                                                    }
+                                                    return <div {...getSuggestionItemProps(suggestion, { style })} >{suggestion.description}</div>
+                                                },)}
                                             </div>
                                     </div>
                                     )}

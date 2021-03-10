@@ -58,7 +58,7 @@ function App() {
     <div>
       <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} />
       <div className="container mt-5">
-
+        <CreateProfile />
         <Switch>
           <Route path="/signup" component={ Signup } />
           <Route 
