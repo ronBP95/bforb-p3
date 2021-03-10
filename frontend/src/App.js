@@ -9,6 +9,7 @@ import Profile from './components/Profile';
 import Welcome from './components/Welcome';
 import About from './components/About';
 import Footer from './components/Footer';
+import CreateProfile from './components/CreateProfile';
 import './App.css';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -57,6 +58,7 @@ function App() {
     <div>
       <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} />
       <div className="container mt-5">
+
         <Switch>
           <Route path="/signup" component={ Signup } />
           <Route 
