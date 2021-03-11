@@ -11,6 +11,7 @@ import About from './components/About';
 import Footer from './components/Footer';
 import CreateProfile from './components/CreateProfile';
 import CreatePlace from './components/CreatePlace';
+import PlacesContainer from './containers/PlacesContainer'
 import './App.css';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -60,7 +61,8 @@ function App() {
       <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} />
       <div className="container mt-5">
         <CreatePlace  />
-
+        <CreateProfile />
+        <PlacesContainer />
         <Switch>
           <Route path="/signup" component={ Signup } />
           <Route 
