@@ -60,8 +60,6 @@ function App() {
     <div>
       <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} />
       <div className="container mt-5">
-        <CreatePlace  />
-        <CreateProfile />
         <PlacesContainer />
         <Switch>
           <Route path="/signup" component={ Signup } />
