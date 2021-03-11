@@ -10,6 +10,7 @@ import Welcome from './components/Welcome';
 import About from './components/About';
 import Footer from './components/Footer';
 import CreateProfile from './components/CreateProfile';
+import CreatePlace from './components/CreatePlace';
 import PlacesContainer from './containers/PlacesContainer'
 import './App.css';
 
@@ -59,6 +60,7 @@ function App() {
     <div>
       <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} />
       <div className="container mt-5">
+        <CreatePlace  />
         <CreateProfile />
         <PlacesContainer />
         <Switch>
@@ -68,7 +70,9 @@ function App() {
             render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>} 
           />
           <Route path="/about" component={ About } />
+          <Route exact path="/editprofile" component= { CreateProfile }/>
           <PrivateRoute path="/profile" component={ Profile } user={currentUser} />
+          <Route exact path="/addplace" component={ CreatePlace } />
           <Route exact path="/" component={ Welcome } />
         </Switch>
       </div>
