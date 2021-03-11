@@ -13,6 +13,8 @@ import CreateProfile from './components/CreateProfile';
 import CreatePlace from './components/CreatePlace';
 import ListPlaces from './components/ListPlaces'
 import PlacesContainer from './containers/PlacesContainer'
+import RateHost from './components/RateHost';
+import RateGuest from './components/RateGuest';
 import './App.css';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -68,6 +70,8 @@ function App() {
             render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>} 
           />
           <Route path="/about" component={ About } />
+          <Route path="/ratehost" component={ RateHost } />
+          <Route path="/rateguest" component={ RateGuest } />
           <Route exact path="/editprofile" component= { CreateProfile }/>
           <PrivateRoute path="/profile" component={ Profile } user={currentUser} />
           <Route exact path="/addplace" component={ CreatePlace } />

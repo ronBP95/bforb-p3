@@ -27,6 +27,7 @@ const CreateProfile = (props) => {
         .then((response) => {
                 console.log(response);
                 const photoUrl = response.data.url;
+                console.log(photoUrl);
                 return photoUrl 
             })
 
@@ -109,7 +110,7 @@ const CreateProfile = (props) => {
                         </div> 
                         <div className="form-group">
                             <label htmlFor="isGuest">I am a traveler</label>
-                            <input type="checkbox" value={isGuest} name="isGuest" onChange={handleIsGuest} className="checkbox" checked />
+                            <input type="checkbox" value={isGuest} name="isGuest" onChange={handleIsGuest} className="checkbox"  />
                         </div>
                         <div className="form-group">
                             <label htmlFor="isHost">I am a host</label>
