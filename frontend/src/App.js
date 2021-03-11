@@ -11,6 +11,7 @@ import About from './components/About';
 import Footer from './components/Footer';
 import CreateProfile from './components/CreateProfile';
 import CreatePlace from './components/CreatePlace';
+import ListPlaces from './components/ListPlaces'
 import PlacesContainer from './containers/PlacesContainer'
 import RateHost from './components/RateHost';
 import RateGuest from './components/RateGuest';
@@ -74,6 +75,7 @@ function App() {
           <Route exact path="/editprofile" component= { CreateProfile }/>
           <PrivateRoute path="/profile" component={ Profile } user={currentUser} />
           <Route exact path="/addplace" component={ CreatePlace } />
+          <Route exact path="/listplaces" component={ ListPlaces } />
           <Route exact path="/" component={ Welcome } />
         </Switch>
       </div>

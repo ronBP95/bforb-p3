@@ -17,8 +17,8 @@ export default function PlacesContainer () {
 
     return (
         <div>
-            <Places places={places}/>
             <h1>List of Places</h1>
+            <Places places={places}/>
         </div>
     )
 }
