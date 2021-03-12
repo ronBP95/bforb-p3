@@ -47,11 +47,12 @@ function App() {
     setIsAuthenticated(true);
   };
 
-  const handleLogout = () => {
+  const handleLogout = (req, res) => {
     if (localStorage.getItem('jwtToken')) {
       localStorage.removeItem('jwtToken');
       setCurrentUser(null);
       setIsAuthenticated(false);
+      alert("You have been logged out. See you again soon!")
     }
   }
 
