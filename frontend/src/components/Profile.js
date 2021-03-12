@@ -8,6 +8,7 @@ const Profile = (props) => {
         <h1>Profile</h1>
         <p><strong>Name:</strong> {props.user.name}</p> 
         <p><strong>Email:</strong> {props.user.email}</p> 
+        <img src="db.userphoto" max-width="400px" max-height="400px" alt="user photo"></img>
         <p><strong>ID:</strong> {props.user.id}</p> 
     </div>) : <h4>Loading...</h4>
 

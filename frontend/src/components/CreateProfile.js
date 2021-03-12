@@ -27,9 +27,8 @@ const CreateProfile = (props) => {
         .then((response) => {
                 console.log(response);
                 const photoUrl = response.data.url;
-                console.log(photoUrl);
-                return photoUrl 
-            })
+                return photoUrl
+        })
 
     };
     const handleName = (e) => setName(e.target.value)
