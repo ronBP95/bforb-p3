@@ -30,7 +30,7 @@ const Navbar = (props) => {
                         <li className="nav-item">
                             <NavLink className="nav-link"  to="/rateguest">RateGuest</NavLink>
                         </li>
-                        <li className="nav-item"
+                        <li className="nav-item">
                             <NavLink className="nav-link"  to="/listplaces">Places</NavLink>
                         </li>
                     </ul>

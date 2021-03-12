@@ -12,7 +12,6 @@ import Footer from './components/Footer';
 import CreateProfile from './components/CreateProfile';
 import CreatePlace from './components/CreatePlace';
 import ListPlaces from './components/ListPlaces'
-import PlacesContainer from './containers/PlacesContainer'
 import RateHost from './components/RateHost';
 import RateGuest from './components/RateGuest';
 import './App.css';
