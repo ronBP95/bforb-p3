@@ -38,7 +38,10 @@ const Login = (props) => {
         .catch(error => console.log(`Login error`, error));
     }
 
-    if (props.user) return <Redirect to="/profile" user={props.user} />;
+    if (props.user) {
+    console.log(props.user)
+    return <Redirect to="/Profile" user={props.user} />;
+    }
 
     return (
         <div className="row mt-4">

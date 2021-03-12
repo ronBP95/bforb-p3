@@ -4,7 +4,7 @@ import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-au
 import { Redirect } from 'react-router-dom';
 
 const CreateProfile = (props) => {
-    let [name, setName] = useState('currentUser.name');
+    let [name, setName] = useState(props.user.name);
     let [photo, setPhoto] = useState('');
     let [location, setLocation] = useState('');
     let [aboutMe, setAboutMe] = useState('');
@@ -27,9 +27,8 @@ const CreateProfile = (props) => {
         .then((response) => {
                 console.log(response);
                 const photoUrl = response.data.url;
-                console.log(photoUrl);
-                return photoUrl 
-            })
+                return photoUrl
+        })
 
     };
     const handleName = (e) => setName(e.target.value)
@@ -59,7 +58,7 @@ const CreateProfile = (props) => {
         <div className="row mt-4">
             <div className="col-md-7 offset-md-3">
                 <div className="card card-body">
-                    <h2 className="py-2">Edit Profile</h2>
+                    <h2 className="py-2">Edit Profile for { props.user.name }</h2>
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
 

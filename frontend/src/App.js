@@ -71,11 +71,11 @@ function App() {
           <Route path="/about" component={ About } />
           <Route path="/ratehost" component={ RateHost } />
           <Route path="/rateguest" component={ RateGuest } />
-          <Route exact path="/editprofile" component= { CreateProfile }/>
+          <PrivateRoute exact path="/editprofile" component= { CreateProfile } user={ currentUser }/>
           <PrivateRoute path="/profile" component={ Profile } user={currentUser} />
           <Route exact path="/addplace" component={ CreatePlace } />
           <Route exact path="/listplaces" component={ ListPlaces } />
-          <Route exact path="/" component={ Welcome } />
+          <Route exact path="/" component={ Welcome, About } />
         </Switch>
       </div>
       <Footer />
