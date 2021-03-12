@@ -4,6 +4,7 @@ import jwt_decode from 'jwt-decode';
 import setAuthToken from '../utils/setAuthToken';
 import { Redirect } from 'react-router-dom';
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
+console.log(REACT_APP_SERVER_URL)
 
 const Login = (props) => {
     let [email, setEmail] = useState('');
