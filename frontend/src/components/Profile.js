@@ -9,6 +9,8 @@ const Profile = (props) => {
         <p><strong>Name:</strong> {props.user.name}</p> 
         <p><strong>Email:</strong> {props.user.email}</p> 
         <p><strong>About Me: {props.user.aboutMe}</strong></p>
+        <p><strong>Why Travel: {props.user.whyTravel}</strong></p>
+        <p><strong>Favorite Breakfast: {props.user.favBreakfast}</strong></p>
         <img src="db.userphoto" max-width="400px" max-height="400px" alt="user photo"></img>
         <p><strong>ID:</strong> {props.user.id}</p> 
     </div>) : <h4>Loading...</h4>
