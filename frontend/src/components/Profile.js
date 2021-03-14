@@ -1,11 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Profile = (props) => {
     console.log(props);
     const userData = props.user ? 
     (<div>
         <h1>Profile</h1>
+        <NavLink to="/editprofile">Edit Profile</NavLink>
+        <NavLink id="share" to="/addplace">Share a Place</NavLink>
         <p><strong>Name:</strong> {props.user.name}</p> 
         <p><strong>Email:</strong> {props.user.email}</p> 
         <p><strong>About Me: {props.user.aboutMe}</strong></p>
