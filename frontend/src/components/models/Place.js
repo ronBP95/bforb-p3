@@ -8,6 +8,11 @@ class PlaceModel {
         let request = axios.get(endPoint)
         return request
     }
+    static create = () => {
+        console.log("created a place!")
+        let request = axios.post(endPoint)
+        return request
+    }
 }
 
 export default PlaceModel;

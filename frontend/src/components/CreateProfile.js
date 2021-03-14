@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
-import { Redirect } from 'react-router-dom';
+
 
 const CreateProfile = (props) => {
     let [name, setName] = useState(props.user.name);
