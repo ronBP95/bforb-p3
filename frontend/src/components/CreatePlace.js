@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
 import { Redirect } from 'react-router-dom';
-import Place from './models/Place'
 import axios from 'axios';
 //import userEvent from '@testing-library/user-event';
 

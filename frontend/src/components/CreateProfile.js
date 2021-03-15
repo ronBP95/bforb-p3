@@ -12,6 +12,7 @@ const CreateProfile = (props) => {
     let [favBreakfast, setFavBreakfast]= useState('');
     let [isGuest, setIsGuest] = useState(true);
     let [isHost, setIsHost] = useState(false);
+    let [redirect, setRedirect] = useState(false);
     let [coordinates, setCoordinates] = useState({
             lat: null, 
             lng: null
@@ -50,8 +51,9 @@ const CreateProfile = (props) => {
     const handleIsHost = (e) => setIsHost(e.target.value);
 
     const handleSubmit = async() => {
-        //Axios
-        //Redirect
+        //Axios axios.post(endPoint)
+        //Redirect <Redirect to="/Profile" profile={props.profile}>
+        setRedirect(true)
     }
 
     return (

@@ -1,10 +1,10 @@
 import React from 'react';
-import PlacesContainer from '../containers/PlacesContainer'
+import ProfileContainer from '../containers/ProfileContainer'
 
 const ListPlaces = () => {
     return (
         <div>
-            <PlacesContainer />
+            <ProfileContainer />
         </div>
     );
 }
