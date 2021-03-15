@@ -3,6 +3,8 @@ import Axios from 'axios';
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 
 
+const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
+
 const CreateProfile = (props) => {
     let [name, setName] = useState(props.user.name);
     let [photo, setPhoto] = useState('');
@@ -12,11 +14,11 @@ const CreateProfile = (props) => {
     let [favBreakfast, setFavBreakfast]= useState('');
     let [isGuest, setIsGuest] = useState(true);
     let [isHost, setIsHost] = useState(false);
-    let [redirect, setRedirect] = useState(false);
     let [coordinates, setCoordinates] = useState({
             lat: null, 
             lng: null
         });
+
 
     const handlePhoto = (e) =>  {
         e.preventDefault();
@@ -30,18 +32,22 @@ const CreateProfile = (props) => {
                 const photoUrl = response.data.url;
                 return photoUrl
         })
+        .catch((error) => {
+            console.log('ERROR IN CLOUDINARY');
+            console.log(error);
+            setPhoto('https://res.cloudinary.com/dbljwcjis/image/upload/v1615592116/Keyboard_cat_hxiuix.jpg')
+        })
 
     };
     const handleName = (e) => setName(e.target.value)
 
     const handleSelect = async (value) => {
         setLocation(value);
-        const results = await geocodeByAddress(value);
-        const latLng = await getLatLng(results[0])
-        console.log(latLng)
-        setCoordinates(latLng);
-        console.log(coordinates)
-
+        // const results = await geocodeByAddress(value);
+        // const latLng = await getLatLng(results[0])
+        // console.log(latLng)
+        // setCoordinates(latLng);
+        // console.log(coordinates)
     };
 
     const handleAboutMe = (e) => setAboutMe(e.target.value);
@@ -50,10 +56,31 @@ const CreateProfile = (props) => {
     const handleIsGuest = (e) => setIsGuest(e.target.value);
     const handleIsHost = (e) => setIsHost(e.target.value);
 
-    const handleSubmit = async() => {
-        //Axios axios.post(endPoint)
-        //Redirect <Redirect to="/Profile" profile={props.profile}>
-        setRedirect(true)
+    const handleSubmit = (e) => {
+        e.preventDefault();
+       console.log("Submit button pressed")
+        const updatedProfile = {
+            name,
+            photo,
+            location,
+            aboutMe,
+            whyTravel,
+            favBreakfast,
+            isGuest,
+            isHost
+        }
+  
+        console.log(updatedProfile)
+        Axios.post(`${REACT_APP_SERVER_URL}/profiles`, updatedProfile)
+        .then((response) => {
+        console.log('It posted!')
+        return <Redirect to={`${REACT_APP_SERVER_URL}/profile`} />
+        })
+        .catch(error => {
+            console.log('Error in Profile Update')
+            console.log(error)
+            console.log(error.response.data)
+        })
     }
 
     return (

@@ -73,7 +73,7 @@ function App() {
           <Route path="/ratehost" component={ RateHost } />
           <Route path="/rateguest" component={ RateGuest } />
           <PrivateRoute exact path="/editprofile" component= { CreateProfile } user={ currentUser }/>
-          <PrivateRoute path="/profile" component={ Profile } user={currentUser} />
+          <Route path="/profile" component={ Profile } user={currentUser} />
           <Route exact path="/addplace" component={ CreatePlace } />
           <Route exact path="/listplaces" component={ ListPlaces } />
           <Route exact path="/" component={ Welcome, About } />
