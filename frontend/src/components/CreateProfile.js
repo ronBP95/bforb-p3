@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
-import { Redirect } from 'react-router-dom';
-import { render } from '@testing-library/react';
+
 
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
@@ -15,8 +14,11 @@ const CreateProfile = (props) => {
     let [favBreakfast, setFavBreakfast]= useState('');
     let [isGuest, setIsGuest] = useState(true);
     let [isHost, setIsHost] = useState(false);
-    let [redirect, setRedirect] = useState(false)
-    let [profileId, setProfileId] = useState('');
+    let [coordinates, setCoordinates] = useState({
+            lat: null, 
+            lng: null
+        });
+
 
 
     const handlePhoto = (e) =>  {
@@ -76,7 +78,7 @@ const CreateProfile = (props) => {
         Axios.post(`${REACT_APP_SERVER_URL}/profiles`, updatedProfile)
         .then((response) => {
         console.log('It posted!')
-        const profileId = response._id
+        const profilgeId = response._id
         })
         .catch(error => {
             console.log('Error in Profile Update')
