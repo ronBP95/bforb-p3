@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
-import { Redirect } from 'react-router-dom';
-import { render } from '@testing-library/react';
+
 
 
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
@@ -45,11 +44,6 @@ const CreateProfile = (props) => {
 
     const handleSelect = async (value) => {
         setLocation(value);
-        // const results = await geocodeByAddress(value);
-        // const latLng = await getLatLng(results[0])
-        // console.log(latLng)
-        // setCoordinates(latLng);
-        // console.log(coordinates)
     };
 
     const handleAboutMe = (e) => setAboutMe(e.target.value);
@@ -61,7 +55,6 @@ const CreateProfile = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setRedirect(true)
 
        console.log("Submit button pressed")
         const updatedProfile = {
@@ -79,13 +72,14 @@ const CreateProfile = (props) => {
         Axios.post(`${REACT_APP_SERVER_URL}/profiles`, updatedProfile)
         .then((response) => {
         console.log('It posted!')
-        const profileId = response._id
+        const profilgeId = response._id
         })
         .catch(error => {
             console.log('Error in Profile Update')
             console.log(error)
             console.log(error.response.data)
         })
+
     }
 
 
