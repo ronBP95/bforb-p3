@@ -2,9 +2,9 @@ import React from 'react';
 //Adding comment so I can re-commit.
 const About = () => {
     return (
-        <div>
-            <h1>About</h1>
-            <p>This is all about us.</p>
+        <div className="about">
+            <h1>Meet the Team</h1>
+            <h4>This is all about us.</h4>
             <p>
             You provide the bed the guest provides the breakfast. 
             An airBnB experience that makes traveling an experience of a life time. 

@@ -4,6 +4,7 @@ import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-au
 
 
 
+
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const CreateProfile = (props) => {
@@ -69,10 +70,12 @@ const CreateProfile = (props) => {
         }
   
         console.log(updatedProfile)
-        Axios.post(`${REACT_APP_SERVER_URL}/profiles`, updatedProfile)
+        Axios.put(`${REACT_APP_SERVER_URL}/profiles/put`, updatedProfile)
         .then((response) => {
-        console.log('It posted!')
-        const profilgeId = response._id
+        console.log(response)
+        console.log(response.data)
+        alert("Your changes have been submitted to your profile!")
+        // const profileId = response._id
         })
         .catch(error => {
             console.log('Error in Profile Update')

@@ -4,7 +4,76 @@ html {
 }
 body {
   margin-bottom: 60px; /* Margin bottom by footer height */
+  background-color: #f6f6f6;
 }
+
+.welcomepage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 100px;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.listplaces {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profilepage {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: solid;
+}
+
+.profilebar {
+  display: flex;
+  justify-content: left;
+}
+
+.ratebar {
+  display: flex;
+  justify-content: left;
+}
+
+.inbar {
+  border: black solid 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inbar2 {
+  border: black solid 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#ratehost {
+  margin-right: 11px;
+  margin-left: 11px;
+}
+
+#rateguest {
+  margin-right: 10px;
+}
+
+#edit {
+  margin-right: 11px;
+  margin-left: 11px;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -63,4 +132,55 @@ body {
 .rate > input:checked ~ label:hover ~ label,
 .rate > label:hover ~ input:checked ~ label {
   color: #c59b08;
+}
+
+.thelogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.photos {
+  display: flex;
+  margin-top: 50px;
+  margin-right: 100px;
+}
+
+#cark {
+  height: 250px;
+  width: 200px;
+  margin-right: 100px;
+}
+
+#dond {
+  height: 250px;
+  width: 200px;
+}
+
+#carkquote {
+  margin-top: 40px;
+  margin-right: 100px;
+}
+
+#dondquote {
+  margin-top: 40px;
+  margin-left: 100px
+}
+
+.welcomeheader {
+  margin-top: 40px;
+}
+
+.welcomeunder {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.welcomesign {
+  margin-top: 20px;
+  border: solid black 1px;
+  border-radius: 60%;
+  padding: 8px;
+  margin-bottom: 20px;
 }

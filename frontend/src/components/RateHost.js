@@ -22,7 +22,7 @@ const RateHost = () => {
         <div className="row mt-4">
             <div className="col-md-7 offset-md-3">
                 <div className="card card-body">
-                    <h2 className="py-2">How was your stay with 'HOST'S NAME'?</h2>
+                    <h2 className="py-2">How was your stay with HOST's NAME'?</h2>
                     <form onSubmit={handleSubmit}>
             {/* Place name and location from params or db */}
                         <div className="form-group">
