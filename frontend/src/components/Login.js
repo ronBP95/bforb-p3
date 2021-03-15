@@ -3,7 +3,9 @@ import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from '../utils/setAuthToken';
 import { Redirect } from 'react-router-dom';
+import { render } from '@testing-library/react';
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
+console.log(REACT_APP_SERVER_URL)
 
 const Login = (props) => {
     let [email, setEmail] = useState('');
@@ -37,7 +39,10 @@ const Login = (props) => {
         .catch(error => console.log(`Login error`, error));
     }
 
-    if (props.user) return <Redirect to="/profile" user={props.user} />;
+    if (props.user) {
+    console.log(props.user)
+    return <Redirect to="/Profile" user={props.user} />;
+    }
 
     return (
         <div className="row mt-4">

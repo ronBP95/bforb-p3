@@ -9,6 +9,11 @@ import Profile from './components/Profile';
 import Welcome from './components/Welcome';
 import About from './components/About';
 import Footer from './components/Footer';
+import CreateProfile from './components/CreateProfile';
+import CreatePlace from './components/CreatePlace';
+import ListPlaces from './components/ListPlaces'
+import RateHost from './components/RateHost';
+import RateGuest from './components/RateGuest';
 import './App.css';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -42,11 +47,12 @@ function App() {
     setIsAuthenticated(true);
   };
 
-  const handleLogout = () => {
+  const handleLogout = (req, res) => {
     if (localStorage.getItem('jwtToken')) {
       localStorage.removeItem('jwtToken');
       setCurrentUser(null);
       setIsAuthenticated(false);
+      alert("You have been logged out. See you again soon!")
     }
   }
 
@@ -64,8 +70,13 @@ function App() {
             render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>} 
           />
           <Route path="/about" component={ About } />
-          <PrivateRoute path="/profile" component={ Profile } user={currentUser} />
-          <Route exact path="/" component={ Welcome } />
+          <Route path="/ratehost" component={ RateHost } />
+          <Route path="/rateguest" component={ RateGuest } />
+          <PrivateRoute exact path="/editprofile" component= { CreateProfile } user={ currentUser }/>
+          <PrivateRoute path="/profile" from="/editprofile" component={ Profile } user={currentUser} />
+          <Route exact path="/addplace" component={ CreatePlace } />
+          <Route exact path="/listplaces" component={ ListPlaces } />
+          <Route exact path="/" component={ Welcome, About } />
         </Switch>
       </div>
       <Footer />

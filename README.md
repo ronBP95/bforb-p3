@@ -1,5 +1,7 @@
 # bforb-p3
 Project 3 for General Assembly
+#### Backend Repo
+https://github.com/ronBP95/bforb-backend
 
 ## Project READMEs at ![GA logo](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
 
@@ -74,7 +76,7 @@ Stretch goals:
 
 ### Code Snippets 
 
-##### Security Solved
+#### Security Solved
 When I first began building the database, I noticed our update routes were build to take in profileIds into the parameters.  However, if a user were to get ahold of someone elses profile id, then they could still update someone elses profile.
 
 To solve this issue we grabbed profiles based on the authenticated users userId and tied the userId to the users Profile.  This means we never show the profileId in the URL and the authenticated user can only update their own profile.  See below: I need to audit my code and make sure this is still accurate.
@@ -82,7 +84,7 @@ To solve this issue we grabbed profiles based on the authenticated users userId 
 ![show controller](./assets/profilesShowControl.png)
 ![show routes](./assets/realRoutes.png)
 
-##### Comment Dependencies
+#### Comment Dependencies
 I began this process without considering the dependencies of each route.  This came to hurt me in the comments create and update route.  When a user creates a comment, the comment needs to be included on the hsots profile and the guests profile, and the otherProfile has to receive a rating which then updates the other users rating total.  
 
 I wished that I had more time to refractor this code. But as my mentor in Seattle says "get it shipped, don't get it right."  This code is messy, but it works and updates all the dependencies that are tied to a single comment. 
