@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
+import { Redirect } from 'react-router-dom';
+import { render } from '@testing-library/react';
 
 
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
@@ -56,8 +58,11 @@ const CreateProfile = (props) => {
     const handleIsGuest = (e) => setIsGuest(e.target.value);
     const handleIsHost = (e) => setIsHost(e.target.value);
 
+
     const handleSubmit = (e) => {
         e.preventDefault();
+        setRedirect(true)
+
        console.log("Submit button pressed")
         const updatedProfile = {
             name,
@@ -74,7 +79,7 @@ const CreateProfile = (props) => {
         Axios.post(`${REACT_APP_SERVER_URL}/profiles`, updatedProfile)
         .then((response) => {
         console.log('It posted!')
-        return <Redirect to={`${REACT_APP_SERVER_URL}/profile`} />
+        const profileId = response._id
         })
         .catch(error => {
             console.log('Error in Profile Update')
@@ -83,11 +88,12 @@ const CreateProfile = (props) => {
         })
     }
 
+
     return (
         <div className="row mt-4">
             <div className="col-md-7 offset-md-3">
                 <div className="card card-body">
-                    <h2 className="py-2">Edit Profile for { props.user.name }</h2>
+                    <h2 className="py-2">Edit Profile for { props.user.name } </h2>
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
 
