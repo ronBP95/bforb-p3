@@ -1,3 +1,5 @@
+import React from 'react';
+import { NavLink } from 'react-router-dom'
 import React, { useImperativeHandle, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
@@ -28,6 +30,7 @@ const Profile = async (props) => {
 }
 
 export default Profile;
+
 
 
 

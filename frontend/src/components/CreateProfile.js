@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
-import { Redirect } from 'react-router-dom';
+
 
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
@@ -14,6 +14,10 @@ const CreateProfile = (props) => {
     let [favBreakfast, setFavBreakfast]= useState('');
     let [isGuest, setIsGuest] = useState(true);
     let [isHost, setIsHost] = useState(false);
+    let [coordinates, setCoordinates] = useState({
+            lat: null, 
+            lng: null
+        });
 
 
     const handlePhoto = (e) =>  {
@@ -77,8 +81,6 @@ const CreateProfile = (props) => {
             console.log(error)
             console.log(error.response.data)
         })
-
-        
     }
 
     return (
