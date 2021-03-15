@@ -72,7 +72,7 @@ const CreateProfile = (props) => {
         Axios.post(`${REACT_APP_SERVER_URL}/profiles`, updatedProfile)
         .then((response) => {
         console.log('It posted!')
-        const profilgeId = response._id
+        const profileId = response._id
         })
         .catch(error => {
             console.log('Error in Profile Update')

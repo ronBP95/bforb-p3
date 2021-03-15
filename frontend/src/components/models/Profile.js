@@ -1,7 +1,7 @@
 import axios from 'axios'
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
-const endPoint = `${REACT_APP_SERVER_URL}/profiles/myProfile`
+const endPoint = `${REACT_APP_SERVER_URL}/profiles/showAll`
 
 class ProfileModel {
     static all = () => {

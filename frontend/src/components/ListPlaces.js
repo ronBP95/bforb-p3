@@ -3,7 +3,7 @@ import ProfileContainer from '../containers/ProfileContainer'
 
 const ListPlaces = () => {
     return (
-        <div>
+        <div className="listplaces">
             <ProfileContainer />
         </div>
     );
