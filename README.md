@@ -68,47 +68,27 @@ Stretch goals:
 
 ---
 ### Technologies & Code Snippets
-## Potential APIs
-https://betterprogramming.pub/a-curated-list-of-100-cool-and-fun-public-apis-to-inspire-your-next-project-7600ce3e9b3
-
-AirB4B
-
-Crime APIs to ‘background check’
-https://www.fbi.gov/wanted/api 
-https://www.jailbase.com/api/
-
-
-Eclipse or meteor shower
-
-Barzz and BreweryDB 
-https://www.barzz.net/api.php
-https://www.brewerydb.com/developers/docs
-https://www.wine-searcher.com/ws-api
-
-Street food 
-https://streetfoodapp.com/api
-https://www.zomato.com/404.php
-
-maps
-https://docs.mapbox.com/
-https://uebermaps.com/api/v2
-https://developers.google.com/earth-engine/
-https://developer.here.com/
-
-travel
-https://www.walkscore.com/professional/travel-time-http-api.php
-https://travelbriefing.org/api 
-https://www.refugerestrooms.org/api/docs/#!/restrooms
-
-I want to to be able to see the weather where I'm going to stay.
-https://rapidapi.com/blog/access-global-weather-data-with-these-weather-apis/
-
-I want to be able to find places to stay where I can see an eclipse.
-https://www.programmableweb.com/api/mooncalc
-
 
 * list of technologies
 * screen captures of your code
+
+### Code Snippets 
+
+##### Security Solved
+When I first began building the database, I noticed our update routes were build to take in profileIds into the parameters.  However, if a user were to get ahold of someone elses profile id, then they could still update someone elses profile.
+
+To solve this issue we grabbed profiles based on the authenticated users userId and tied the userId to the users Profile.  This means we never show the profileId in the URL and the authenticated user can only update their own profile.  See below: I need to audit my code and make sure this is still accurate.
+
+![show controller](./assets/profilesShowControl.png)
+![show routes](./assets/profileRoutes.png)
+
+##### Comment Dependencies
+I began this process without considering the dependencies of each route.  This came to hurt me in the comments create and update route.  When a user creates a comment, the comment needs to be included on the hsots profile and the guests profile, and the otherProfile has to receive a rating which then updates the other users rating total.  
+
+I wished that I had more time to refractor this code. But as my mentor in Seattle says "get it shipped, don't get it right."  This code is messy, but it works and updates all the dependencies that are tied to a single comment. 
+
+![comment update](./assets/Comments.png)
+
 
 ---
 ### Credits
@@ -117,5 +97,10 @@ Give credit to any `codepen` that inspired you, `medium` article that helped you
 ---
 
 ### Future development
-What are the next steps for the project? How will you continue to evolve it?
+##### Catch Errors in the backend:
+* When I first started this project I anticipated the backend to take less time than it did and I planned for a full day of refractoring to include try/catch blocks and create new methods to make the code easier to read.  However, the comments controller had more dependencies than I originally envisioned and took more time to develop than anticipated.
+
+##### Security issues:
+* About halfway through the project I noticed if an authenticated user were to get a hold of someone elses userId and input that in the parameter of the website they could then update their profile.  I updated the profiles section to find a users profile based on the authenticated users id and not the parameter.  However, some methods still need to be audited and fixed. 
+
 
