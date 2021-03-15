@@ -4,6 +4,7 @@ import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-au
 import { Redirect } from 'react-router-dom';
 import { render } from '@testing-library/react';
 
+
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const CreateProfile = (props) => {
@@ -15,8 +16,10 @@ const CreateProfile = (props) => {
     let [favBreakfast, setFavBreakfast]= useState('');
     let [isGuest, setIsGuest] = useState(true);
     let [isHost, setIsHost] = useState(false);
-    let [redirect, setRedirect] = useState(false)
-    let [profileId, setProfileId] = useState('');
+    let [coordinates, setCoordinates] = useState({
+            lat: null, 
+            lng: null
+        });
 
 
     const handlePhoto = (e) =>  {
@@ -83,7 +86,6 @@ const CreateProfile = (props) => {
             console.log(error)
             console.log(error.response.data)
         })
-
     }
 
 

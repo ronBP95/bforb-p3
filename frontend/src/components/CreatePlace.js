@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
 import { Redirect } from 'react-router-dom';
+import axios from 'axios';
 //import userEvent from '@testing-library/user-event';
 
 // const placesToStaySchema = new Schema({
@@ -37,9 +38,17 @@ const handleBedPhoto = (e) =>  {
 //DESCRIPTION
 const handleDescription = (e) => setDescription(e.target.value);
 //SUBMIT BUTTON
-const handleSubmit = async() => {
-    //Axios
-    //Redirect
+const handleSubmit = (e) => {
+e.preventDefault();
+const placeInfo = {
+    title,
+    bedPhoto,
+    description,
+}
+axios.post("http://localhost:8000/places", placeInfo)
+. then((response) => {
+    console.log(response.data.url)
+})
 }
 
     return (
