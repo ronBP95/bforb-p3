@@ -51,7 +51,7 @@ const Profile = (props) => {
     };
     return (
         <div>
-            { props.user ? userData : errorDiv() }
+            {userData}
         </div>
     );
 }

@@ -5,7 +5,7 @@ import Axios from 'axios'
 
 const Profile = (props) => {
     console.log(props);
-    const userData = props.user ? 
+    const userData = props.user 
     (<div>
         <h1>Profile</h1>
         <NavLink to="/editprofile">Edit Profile</NavLink>
@@ -17,7 +17,7 @@ const Profile = (props) => {
         <p><strong>Favorite Breakfast: {props.user.favBreakfast}</strong></p>
         <img src="db.userphoto" max-width="400px" max-height="400px" alt="user photo"></img>
         <p><strong>ID:</strong> {props.user.id}</p> 
-    </div>) : <h4>Loading...</h4>
+    </div>)
 
     const errorDiv = () => {
         return (
@@ -29,7 +29,7 @@ const Profile = (props) => {
     
     return (
         <div>
-            { props.user ? userData : errorDiv() }
+            {userData}
         </div>
     );
 

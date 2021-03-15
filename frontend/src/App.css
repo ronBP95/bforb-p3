@@ -7,6 +7,14 @@ body {
   background-color: #f6f6f6;
 }
 
+.welcomepage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 100px;
+}
+
 .about {
   display: flex;
   justify-content: center;
@@ -131,4 +139,47 @@ body {
   align-items: center;
   justify-content: center;
   margin-bottom: 40px;
+}
+
+.photos {
+  display: flex;
+  margin-top: 50px;
+  margin-right: 100px;
+}
+
+#cark {
+  height: 250px;
+  width: 200px;
+  margin-right: 100px;
+}
+
+#dond {
+  height: 250px;
+  width: 200px;
+}
+
+#carkquote {
+  margin-top: 40px;
+  margin-right: 100px;
+}
+
+#dondquote {
+  margin-top: 40px;
+  margin-left: 100px
+}
+
+.welcomeheader {
+  margin-top: 40px;
+}
+
+.welcomeunder {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.welcomesign {
+  margin-top: 20px;
+  border: solid black 1px;
+  border-radius: 60%;
+  padding: 8px;
 }

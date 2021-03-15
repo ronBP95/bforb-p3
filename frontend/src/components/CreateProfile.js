@@ -69,9 +69,9 @@ const CreateProfile = (props) => {
         }
   
         console.log(updatedProfile)
-        Axios.post(`${REACT_APP_SERVER_URL}/profiles`, updatedProfile)
+        Axios.put(`${REACT_APP_SERVER_URL}/profiles`, updatedProfile)
         .then((response) => {
-        console.log('It posted!')
+        alert("Your changes have been submitted to your profile!")
         const profileId = response._id
         })
         .catch(error => {
