@@ -80,7 +80,7 @@ When I first began building the database, I noticed our update routes were build
 To solve this issue we grabbed profiles based on the authenticated users userId and tied the userId to the users Profile.  This means we never show the profileId in the URL and the authenticated user can only update their own profile.  See below: I need to audit my code and make sure this is still accurate.
 
 ![show controller](./assets/profilesShowControl.png)
-![show routes](./assets/profileRoutes.png)
+![show routes](./assets/realRoutes.png)
 
 ##### Comment Dependencies
 I began this process without considering the dependencies of each route.  This came to hurt me in the comments create and update route.  When a user creates a comment, the comment needs to be included on the hsots profile and the guests profile, and the otherProfile has to receive a rating which then updates the other users rating total.  
