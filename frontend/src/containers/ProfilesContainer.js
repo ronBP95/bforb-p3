@@ -3,21 +3,21 @@ import ProfileModel from '../components/models/Profile'
 import Profile from '../components/Profile'
 import Profile from '../components/models/Profile'
 
-export default function PlacesContainer () {
+export default function ProfileContainer () {
     const [profile, setProfile] = useState({})
     
-    useEffect((props) => {
+    useEffect(() => {
         const fetchData = async() => {
-            const res = await profileModel.find(props.user._id)
+            const res = await ProfileModel.all()
             console.log(res)
-            setrPofile(res.data)
+            setProfile(res.data)
         }
         fetchData()
     }, [])
 
     return (
         <div>
-            <Profile profiles={updatedProfile}/>
+            <Profile profile={profile}/>
         </div>
     )
 }

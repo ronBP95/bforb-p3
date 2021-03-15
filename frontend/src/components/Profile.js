@@ -1,33 +1,28 @@
 import React, { useImperativeHandle, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Axios from 'axios';
 import { isCompositeComponent } from 'react-dom/test-utils';
+import ProfileModel from './models/Profile'
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 
 
-const Profile = async (props) => {
-
-    const thisProfile = await Axios.get(`${REACT_APP_SERVER_URL}/profiles/604d3be0ed06bd191ca6f4dc`)
-    const { name, photo, aboutMe } = thisProfile.data
-    (<div>
-        <h1>Profile</h1>
-        <p><strong>Name:</strong> {name}</p> 
-        <p><strong>About:</strong> {aboutMe}</p> 
-        <img src={photo} max-width="400px" max-height="400px" alt="user photo"></img>
-        <p><strong>ID:</strong> {props.user.id}</p> 
-    </div>) 
-    
-    
+const Profile = () => {
+    try {
+    const profileData = Axios.get(`${REACT_APP_SERVER_URL}/profiles/myProfile`)
+    console.log(profileData)
+    } catch(error) {
+        console.log(error)
+        console.log(error.message)
+    }
+        
     
     return (
         <div>
-            { thisProfile }
+           THIS IS THE PROFILE PAGE
         </div>
     );
 }
-
-export default Profile;
 
 
 
@@ -47,19 +42,22 @@ export default Profile;
     
 //     )}
 
-//  getProfile();
 
-// const Profile = async (props) => {
-//     const userData = await Axios.get(`${REACT_APP_SERVER_URL}/profiles/`)  
-//     console.log(userData)
-    // (<div>
-    //     <h1>Profile</h1>
-    //     <p><strong>Name:</strong> {props.user.name}</p> 
-    //     <p><strong>Email:</strong> {props.user.email}</p> 
-    //     <img src="db.userphoto" max-width="400px" max-height="400px" alt="user photo"></img>
-    //     <p><strong>ID:</strong> {props.user.id}</p> 
-    // </div>) 
-
+// const Profile = (props) => {
+//     console.log(props);
+//     const userData = props.user ? 
+//     (<div>
+//         <h1>Profile</h1>
+//         <NavLink to="/editprofile">Edit Profile</NavLink>
+//         <NavLink id="share" to="/addplace">Share a Place</NavLink>
+//         <p><strong>Name:</strong> {props.user.name}</p> 
+//         <p><strong>Email:</strong> {props.user.email}</p> 
+//         <p><strong>About Me: {props.user.aboutMe}</strong></p>
+//         <p><strong>Why Travel: {props.user.whyTravel}</strong></p>
+//         <p><strong>Favorite Breakfast: {props.user.favBreakfast}</strong></p>
+//         <img src="db.userphoto" max-width="400px" max-height="400px" alt="user photo"></img>
+//         <p><strong>ID:</strong> {props.user.id}</p> 
+//     </div>) : <h4>Loading...</h4>
 //     const errorDiv = () => {
 //         return (
 //             <div className="text-center pt-4">
@@ -67,14 +65,11 @@ export default Profile;
 //             </div>
 //         );
 //     };
-    
 //     return (
 //         <div>
-//             "Hello!"
-//             {/* { userData ? userData : errorDiv() } */}
+//             { props.user ? userData : errorDiv() }
 //         </div>
 //     );
-
 // }
 
-// export default Profile;
+export default Profile;
