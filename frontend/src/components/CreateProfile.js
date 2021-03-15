@@ -3,6 +3,7 @@ import Axios from 'axios';
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 
 
+
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const CreateProfile = (props) => {
@@ -18,7 +19,6 @@ const CreateProfile = (props) => {
             lat: null, 
             lng: null
         });
-
 
 
     const handlePhoto = (e) =>  {
@@ -44,11 +44,6 @@ const CreateProfile = (props) => {
 
     const handleSelect = async (value) => {
         setLocation(value);
-        // const results = await geocodeByAddress(value);
-        // const latLng = await getLatLng(results[0])
-        // console.log(latLng)
-        // setCoordinates(latLng);
-        // console.log(coordinates)
     };
 
     const handleAboutMe = (e) => setAboutMe(e.target.value);
@@ -60,7 +55,6 @@ const CreateProfile = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setRedirect(true)
 
        console.log("Submit button pressed")
         const updatedProfile = {
